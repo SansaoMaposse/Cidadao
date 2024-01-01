@@ -39,5 +39,16 @@ public class ControllerPessoa {
 		buffer.close();
 		return pessoas;
 	}
+	
+	public static void actualizarNoFicheiro (ArrayList<Pessoa> pessoas) throws IOException{
+		BufferedWriter buffer = new BufferedWriter(new FileWriter("pessoa.txt", true));
+		
+		for (Pessoa pessoa : pessoas) {
+			buffer.write(pessoa.toString());
+			buffer.newLine();
+			
+		}
+		buffer.close();
+	}
 
 }
