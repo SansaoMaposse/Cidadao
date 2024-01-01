@@ -50,5 +50,23 @@ public class ControllerPessoa {
 		}
 		buffer.close();
 	}
+	
+	public static void actualizarPessoa (int id, String nome, String genero, String estadoCivil, int anoNascimento, int anoActual) throws IOException{
+		
+		ArrayList<Pessoa> pessoas = listarPessoas();
+		
+		for (Pessoa pessoa : pessoas) {
+			if (id == pessoa.getId()) {
+				pessoa.setNome(nome);
+				pessoa.setGenero(genero);
+				pessoa.setEstadoCivil(estadoCivil);
+				pessoa.setAnoNascimento(anoNascimento);
+				pessoa.setAnoActual(anoActual);
+				
+			}
+			
+		}
+		actualizarNoFicheiro(pessoas);
+	}
 
 }
