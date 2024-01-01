@@ -68,5 +68,17 @@ public class ControllerPessoa {
 		}
 		actualizarNoFicheiro(pessoas);
 	}
+	
+	public static void  removePessoa (int id) throws IOException{
+		
+		ArrayList<Pessoa> pessoas = listarPessoas();
+		
+		for(int i = 0; i<pessoas.size(); i++) {
+			if(id == pessoas.get(i).getId()) {
+				pessoas.remove(i);
+			}
+		}
+		 actualizarNoFicheiro(pessoas);
+	}
 
 }
